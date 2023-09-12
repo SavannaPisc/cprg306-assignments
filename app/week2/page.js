@@ -1,4 +1,4 @@
-import StudentInfo from "./StudentInfo";
+import StudentInfo from "../StudentInfo";
 
 export default function week2() {
     return (
