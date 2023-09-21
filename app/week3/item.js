@@ -1,10 +1,10 @@
 export default function Item({name, quantity, category}) {
     return (
-    <ul>
-        <li>Item Name: {name}</li>
-        <li>Item Quantity: {quantity}</li>
-        <li>Item Category: {category}</li>
-        <li>_</li>
-    </ul>
+        <main>
+            <ul className = "text-center p-2 m-4 bg-sky-700 rounded-md">
+                <li className = "text-xl font-bold">{name}</li>
+                <li>Buy {quantity} in {category}</li>
+            </ul>
+        </main>
     );
 }
