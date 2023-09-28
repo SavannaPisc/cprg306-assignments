@@ -44,25 +44,28 @@ export default function NewItem() {
     
 
     return(
-        <main className = "flex min-h-screen flex-col items-center justify-between p-12">
-            <form onSubmit = {handleSubmit}  className = "text-black flex flex-col w-96 bg-slate-800 rounded-md">
-                <input required type = "text" placeholder = "Item name" onChange = {handleNameChange} value = {name} className = "m-4"/>
-                <input type = "number" placeholder = "Quantity" min = "1" max = "99" onChange = {handleQuantityChange} value = {quantity} className = "m-4"/>
-                <select onChange = {handleCategoryChange} value = {category} className = "m-4"> 
-                    <option value ="produce">Produce</option>
-                    <option value ="dairy">Dairy</option>
-                    <option value ="bakery">Bakery</option>
-                    <option value ="meat">Meat</option>
-                    <option value ="frozen foods">Frozen Foods</option>
-                    <option value ="canned goods">Canned Goods</option>
-                    <option value ="dry goods">Dry Goods</option>
-                    <option value ="beverages">Beverages</option>
-                    <option value ="snacks">Snacks</option>
-                    <option value ="household">Household</option>
-                    <option value ="other">Other</option>
-                </select>
-                <button type = "submit" className = "bg-sky-500 rounded-md m-4 text-white hover:bg-sky-700">Add item</button>
-            </form>
+        <main className = "flex min-h-screen flex-col items-center">
+            <div className = "mt-8 p-8 bg-slate-800 rounded-md">
+            <h1 className = "text-2xl font-bold m-4">Add new item to shopping list</h1>
+                <form onSubmit = {handleSubmit}  className = "text-black flex flex-col w-96">
+                    <input required type = "text" placeholder = "Item name" onChange = {handleNameChange} value = {name} className = "m-4 rounded-sm"/>
+                    <input type = "number" placeholder = "Quantity" min = "1" max = "99" onChange = {handleQuantityChange} value = {quantity} className = "m-4 rounded-sm"/>
+                    <select onChange = {handleCategoryChange} value = {category} className = "m-4 rounded-sm"> 
+                        <option value ="produce">Produce</option>
+                        <option value ="dairy">Dairy</option>
+                        <option value ="bakery">Bakery</option>
+                        <option value ="meat">Meat</option>
+                        <option value ="frozen foods">Frozen Foods</option>
+                        <option value ="canned goods">Canned Goods</option>
+                        <option value ="dry goods">Dry Goods</option>
+                        <option value ="beverages">Beverages</option>
+                        <option value ="snacks">Snacks</option>
+                        <option value ="household">Household</option>
+                        <option value ="other">Other</option>
+                    </select>
+                    <button type = "submit" className = "bg-sky-500 rounded-md m-4 text-white hover:bg-sky-700">Add item</button>
+                </form>
+            </div>
         </main>
     );
 }
