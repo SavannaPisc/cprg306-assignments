@@ -1,5 +1,5 @@
 "use client";
-k
+
 import { useState } from "react";
 
 export default function NewItem() {
