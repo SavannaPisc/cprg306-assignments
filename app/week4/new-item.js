@@ -46,7 +46,9 @@ export default function NewItem() {
     return(
         <main className = "flex min-h-screen flex-col items-center">
             <div className = "mt-8 p-8 bg-slate-800 rounded-md">
-            <h1 className = "text-2xl font-bold m-4">Add new item to shopping list</h1>
+                <header>
+                    <h1 className = "text-2xl font-bold m-4">Add new item to shopping list</h1>
+                </header>
                 <form onSubmit = {handleSubmit}  className = "text-black flex flex-col w-96">
                     <input required type = "text" placeholder = "Item name" onChange = {handleNameChange} value = {name} className = "m-4 rounded-sm"/>
                     <input type = "number" placeholder = "Quantity" min = "1" max = "99" onChange = {handleQuantityChange} value = {quantity} className = "m-4 rounded-sm"/>
