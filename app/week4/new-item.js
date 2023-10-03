@@ -8,6 +8,7 @@ export default function NewItem() {
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
 
+    // Handling form submission
     const handleSubmit = (event) => {
         event.preventDefault(); // Prevent page reload
 
@@ -21,7 +22,7 @@ export default function NewItem() {
         // Log item to console
         console.log(newItem);
 
-        //Alert with current variable values
+        // Alert with current variable values
         alert(`Item name: ${name}\nQuantity: ${quantity}\nCategory: ${category}`);
 
         // Reset state variables
@@ -30,6 +31,7 @@ export default function NewItem() {
         setCategory("produce");
     };
 
+    // Handling input changes
     const handleNameChange = (event) => {
         setName(event.target.value);
     };
