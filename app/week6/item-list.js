@@ -2,32 +2,30 @@
 
 import Item from "./item";
 import { useState } from "react";
+import itemsData from "./items.json";
 
 
 export default function ItemList({ items }) {
     const [sortBy, setSortBy] = useState("name");
 
     // Convert itemsData to array of Item objects
-    let items = itemsData.map((item) => ({
-        ...item,
-        item: new Item(item.name, item.quantity, item.category)
-    }));
+    let itemsArray = items
 
-    // Copy items array to use for rendering
-    let NewItem = [...items];
-
- 
     // Sort items by name or category depending on sortBy state variable
     if (sortBy === "name") {
-        items = items.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortBy === "category") {
-        items = items.sort((a, b) => a.category.localeCompare(b.category));
-
+        itemsArray = itemsArray.sort((a, b) => a.name.localeCompare(b.name));
+    } 
+    else if (sortBy === "category") {
+        itemsArray = itemsArray.sort((a, b) => a.category.localeCompare(b.category));
     }
+
+    // const handleAddItem = (newItem) => {
+    //     const newItems = [...itemsCopy, { ...newItem, id: Date.now() }];
+    //     setItemsCopy(newItems);
+    // };
 
     return ( 
         <>
-            <h1 className = "text-center p-2 mt-4 text-3xl font-bold items-center">My Shopping List</h1>
             <div className = "flex flex-items-center justify-center w-full rounded-md">
                 <button id = "name" value = "name" onClick = {(e) => setSortBy(e.target.value)} class = "bg-sky-500 p-4 focus:bg-sky-300 m-8 w-40 rounded-sm">Sort by name</button>
                 <button id = "category" value = "category" onClick = {(e) => setSortBy(e.target.value)} class = "bg-sky-500 p-4 focus:bg-sky-300 m-8 w-40 rounded-sm">Sort by category</button>
@@ -35,8 +33,8 @@ export default function ItemList({ items }) {
             </div>
 
             <div>
-                {items.map((item) => (
-                    <NewItem
+                {itemsArray.map((item) => (
+                    <Item
                     name = {item.name}
                     quantity = {item.quantity}
                     category = {item.category}

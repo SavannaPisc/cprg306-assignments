@@ -2,7 +2,7 @@
 
 import NewItem from './new-item.js';
 import ItemList from './item-list.js';
-import itemsData from '.items.json';
+import itemsData from './items.json';
 import { useState } from 'react';
 
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
     const [items, setItems] = useState(
         itemsData.map((item) => ({
         ...item,
-        item: new Item(item.name, item.quantity, item.category)
+        item: new NewItem(item.name, item.quantity, item.category)
     })));
 
     // Event handler that adds a new item to items
@@ -20,6 +20,7 @@ export default function Page() {
 
     return (
         <main>
+            <h1 className = "text-center p-2 mt-4 text-3xl font-bold items-center">My Shopping List</h1>
             <NewItem onAddItem={handleAddItem} />
             <ItemList items={items} />
         </main>

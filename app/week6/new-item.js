@@ -45,7 +45,7 @@ export default function NewItem({ onAddItem }) {
     
 
     return(
-        <main className = "flex min-h-screen flex-col items-center">
+        <main className = "flex flex-col mb-4 items-center">
             <div className = "mt-8 p-8 bg-slate-800 rounded-md">
                 <header>
                     <h1 className = "text-2xl font-bold m-4">Add new item to shopping list</h1>
