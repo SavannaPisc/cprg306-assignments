@@ -5,7 +5,7 @@ import { useState } from "react";
 import itemsData from "./items.json";
 
 
-export default function ItemList({ items }) {
+export default function ItemList({ items, onItemSelect }) {
     const [sortBy, setSortBy] = useState("name");
 
     // Convert itemsData to array of Item objects
@@ -19,7 +19,6 @@ export default function ItemList({ items }) {
         itemsArray = itemsArray.sort((a, b) => a.category.localeCompare(b.category));
     }
 
-
     return ( 
         <>
             <div className = "flex flex-items-center justify-center w-full rounded-md">
@@ -28,7 +27,7 @@ export default function ItemList({ items }) {
 
             </div>
 
-            <div>
+            <div onClick = {onItemSelect}>
                 {itemsArray.map((item) => (
                     <Item
                     name = {item.name}
