@@ -29,7 +29,7 @@ export default function Page() {
         <main>
             <h1 className = "text-center p-2 mt-4 text-3xl font-bold items-center">My Shopping List</h1>
             <NewItem onAddItem = {handleAddItem} />
-            <ItemList items = {items} onItemSelect={handleItemSelect} />
+            <ItemList items = {items} onItemSelect = {handleItemSelect} />
             <MealIdeas ingredient = {selectedItemName} />
         </main>
     );

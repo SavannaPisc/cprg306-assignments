@@ -23,12 +23,12 @@ export default function MealIdeas({ ingredient }) {
             try {
                 const data = await fetchMealIdeas({ ingredient });
                 setMeals(data.meals);
+                // Destructure the data and rename
+                const { idMeal: id, strMeal: name, strMealThumb: image } = data.meals[0];
             } catch (error) {
                 console.error(error);
             }
     }
-        // Destructure the data and rename
-        // const { idMeal: id, strMeal: name, strMealThumb: image } = data.meals[0];
 
         // this.setMeals({ 
         //     meals: data.map((meal) => (   
@@ -47,13 +47,16 @@ export default function MealIdeas({ ingredient }) {
     return (
         <div>
             <h1 className = "text-center p-2 mt-4 text-3xl font-bold items-right">Meal Ideas</h1>
-            <li>
-                {meals.map((meal) => (
-                    <meal
-                    mealName = {meal.strMeal}
-                    key = {meal.idMeal}/>
-                ))}
-            </li>
+            <ul>
+                <li>
+                    {meals.map((meal) => (
+                        <Meal
+                        name = {meal.strMeal}
+                        key = {meal.idMeal}/>
+                    ))}
+                </li>
+            </ul>
+
         </div>
     );
 }
