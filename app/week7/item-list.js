@@ -2,7 +2,6 @@
 
 import Item from "./item";
 import { useState } from "react";
-import itemsData from "./items.json";
 
 
 export default function ItemList({ items, onItemSelect }) {
@@ -20,23 +19,25 @@ export default function ItemList({ items, onItemSelect }) {
     }
 
     return ( 
-        <>
+        <div className = "flex flex-col float-left">
             <div className = "rounded-md">
-                <button id = "name" value = "name" onClick = {(e) => setSortBy(e.target.value)} className = "bg-sky-500 p-4 focus:bg-sky-300 m-8 w-40 rounded-sm">Sort by name</button>
-                <button id = "category" value = "category" onClick = {(e) => setSortBy(e.target.value)} className = "bg-sky-500 p-4 focus:bg-sky-300 m-8 w-40 rounded-sm">Sort by category</button>
+                <button id = "name" value = "name" onClick = {(e) => setSortBy(e.target.value)} className = "bg-sky-500 p-4 focus:bg-sky-300 m-4 w-40 rounded-sm ">Sort by name</button>
+                <button id = "category" value = "category" onClick = {(e) => setSortBy(e.target.value)} className = "bg-sky-500 p-4 focus:bg-sky-300 m-4 w-40 rounded-sm">Sort by category</button>
 
             </div>
 
-            <div onClick = {onItemSelect}>
+            <div>
                 {itemsArray.map((item) => (
                     <Item
-                    name = {item.name}
-                    quantity = {item.quantity}
-                    category = {item.category}
-                    key = {item.id}/>
+                        name={item.name}
+                        quantity={item.quantity}
+                        category={item.category}
+                        key={item.id}
+                        onSelect={onItemSelect} // Pass onItemSelect prop to Item component
+                    />
                 ))}
             </div> 
  
-        </>
+        </div>
     );
 }

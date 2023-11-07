@@ -22,7 +22,9 @@ export default function Page() {
 
     // Event handler that extracts the name of the selected item
     function handleItemSelect(name) {
-       // setSelectedItemName(name.split(","));
+        const cleanName = name.trim().split(/[\s,]+/);
+        console.log(cleanName);
+        setSelectedItemName(cleanName[0]);
     }
 
     return (

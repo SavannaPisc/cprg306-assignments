@@ -2,7 +2,6 @@
 
 import Item from "./item";
 import { useState } from "react";
-import itemsData from "./items.json";
 
 
 export default function ItemList({ items }) {
