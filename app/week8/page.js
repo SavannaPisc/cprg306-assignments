@@ -1,6 +1,7 @@
 "use client";
 
 import { useUserAuth } from "./_utils/auth-context";
+import ShoppingPage from "./shopping-list/page.js";
 
 export default function Page(){
 
@@ -36,6 +37,7 @@ export default function Page(){
                             Welcome { user.displayName }
                         </p>
                         <img src = { user.photoURL } alt = { user.displayName } className = "w-8 h-8"/>
+                        <ShoppingPage/>
                         <button className = "text-lg m-2 hover:underline" onClick = {handleSignOut}>Sign Out</button>
                     </div>
                 ) : (
