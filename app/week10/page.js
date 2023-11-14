@@ -1,5 +1,6 @@
 "use client";
 
+import { addNewItem, getShoppingList } from "./_services/shopping-list-service";
 import { useUserAuth } from "./_utils/auth-context";
 import ShoppingPage from "./shopping-list/page.js";
 
@@ -25,6 +26,17 @@ export default function Page(){
 
     console.log(user);
 
+    if(user){
+        const items = getShoppingList( user.uid );        
+        console.log(items);
+    }
+
+    let newItem = {
+        name: "Bananas",
+        category: "Produce",
+        quantity: 4,
+    }
+
     return(
         <main>
             <header>
@@ -36,10 +48,11 @@ export default function Page(){
                         <p>
                             Welcome { user.displayName }
                         </p>
-                        <img src = { user.photoURL } alt = { user.displayName } className = "w-8 h-8"/>
-
+                        <p>Your user ID is: {user.uid}</p> 
                         <button className = "text-lg m-2 hover:underline" onClick = {handleSignOut}>Sign Out</button>
+                        <img src = { user.photoURL } alt = { user.displayName } className = "w-8 h-8"/>
                         <ShoppingPage/>
+                       
                     </div>
                 ) : (
                     <button className = "text-lg m-2 hover:underline" onClick = {handleSignIn}>Sign In</button>

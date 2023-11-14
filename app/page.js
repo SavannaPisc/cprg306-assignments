@@ -16,6 +16,8 @@ export default function Home() {
         <Link href="/week6" className ="bg-sky-700 rounded-md p-2 m-2">Week 6</Link>
         <Link href="/week7" className ="bg-sky-700 rounded-md p-2 m-2">Week 7</Link>
         <Link href="/week8" className ="bg-sky-700 rounded-md p-2 m-2">Week 8</Link>
+        <Link href="/week10" className ="bg-sky-700 rounded-md p-2 m-2">Week 10</Link>
+
       </div>
 
     </main>
