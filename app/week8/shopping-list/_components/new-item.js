@@ -48,7 +48,7 @@ export default function NewItem({ onAddItem }) {
         <main className = "flex flex-col mb-4 items-center">
             <div className = "mt-8 p-8 bg-slate-800 rounded-md">
                 <header>
-                    <h1 className = "text-2xl font-bold m-4">Add new item to shopping list</h1>
+                    <h1 className = "text-2xl text-white font-bold m-4">Add new item to shopping list</h1>
                 </header>
                 <form onSubmit = {handleSubmit}  className = "text-black flex flex-col w-96">
                     <input required type = "text" placeholder = "Item name" onChange = {handleNameChange} value = {name} className = "m-4 rounded-sm"/>

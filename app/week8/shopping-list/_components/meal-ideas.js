@@ -35,7 +35,7 @@ export default function MealIdeas({ ingredient }) {
 
     return (
         <div className = "flex flex-col text-center">
-            <h1 className = "mt-14 text-3xl font-bold">Meal Ideas</h1>
+            <h1 className = "mt-14 text-3xl font-bold mb-10">Meal Ideas</h1>
             <ul className = "mr-6">
                 {meals && meals.map((meal) => (
                     <li key = {meal.idMeal}>{meal.strMeal}</li>

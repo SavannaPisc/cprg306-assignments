@@ -27,22 +27,34 @@ export default function Page(){
 
     return(
         <main>
-            <header>
-                <h1>Login Page</h1>
-            </header>
+
             <section>
                 { user ? (
                     <div>
-                        <p>
-                            Welcome { user.displayName }
-                        </p>
-                        <img src = { user.photoURL } alt = { user.displayName } className = "w-8 h-8"/>
+                        <div className = "flex flex-col">       
+                            <div className = "flex mx-auto">                            
+                                <img src = { user.photoURL } alt = { user.displayName } className = "w-14 h-14 rounded-full m-2 "/>                 
+                               <button className = "text-lg hover:underline p-2 rounded-md" onClick = {handleSignOut}>Sign Out</button>
+                            </div>
+                            <p className = "text-3xl text-center mt-10" >
+                                Welcome, { user.displayName }
+                            </p>
 
-                        <button className = "text-lg m-2 hover:underline" onClick = {handleSignOut}>Sign Out</button>
+                        </div>
                         <ShoppingPage/>
                     </div>
-                ) : (
-                    <button className = "text-lg m-2 hover:underline" onClick = {handleSignIn}>Sign In</button>
+                ) : ( 
+                    <div className = "flex flex-col items-center justify-center content-center">
+                        <div>
+                            <header>
+                                <h1 className = "text-3xl text-center mt-10">Login Page</h1>
+                            </header>
+                            <p className = "text-center mt-5">Please sign in with GitHub to view your shopping list</p>
+                            <div className = "flex flex-col w-60 mt-10 mx-auto">
+                                <button className = "text-lg m-2 hover:bg-sky-600 bg-sky-500 p-2 rounded-md" onClick = {handleSignIn}>Sign In</button>
+                            </div>
+                        </div>
+                    </div>
                 ) 
                 }
             </section> 
